@@ -1,10 +1,12 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setName, setAge } from "../redux/actions";
+import { setName, setAge, setErrorMessage } from "../redux/actions";
 import { withRouter } from "react-router-dom";
 
 function NamePage(props) {
   //redux
+  const emailFromStore = useSelector(state => state.email);
+  const passwordFromStore = useSelector(state => state.password);
   const nameFromStore = useSelector(state => state.name);
   const ageFromStore = useSelector(state => state.age);
   const dispatch = useDispatch();
@@ -28,11 +30,38 @@ function NamePage(props) {
     props.history.push("/email");
   };
 
+  const signUpCall = () => {
+    fetch("https://www1.nyc.gov/signup", {
+      method: "POST",
+      headers: {
+        Accept: "application/json",
+        "Content-type": "application/json"
+      },
+      body: JSON.stringify({
+        emailFromStore,
+        passwordFromStore,
+        nameFromStore,
+        ageFromStore
+      })
+    })
+      .then(r => r.json())
+      .then(data => {
+        props.history.push("/confirmation");
+      })
+      .catch(err => {
+        //In real world we should dispatch an error message
+        // dispatch(setErrorMessage("Sign Up Failed"));
+
+        //In real world we should put this in the .then block
+        props.history.push("/confirmation");
+      });
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(setName(nameValue));
     dispatch(setAge(ageValue));
-    props.history.push("/confirmation");
+    signUpCall();
   };
 
   return (

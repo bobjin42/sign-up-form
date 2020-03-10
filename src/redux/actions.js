@@ -19,3 +19,8 @@ export const setAge = age => ({
   type: ActionTypes.SET_AGE,
   payload: age
 });
+
+export const setErrorMessage = message => ({
+  type: ActionTypes.SET_ERROR_MESSAGE,
+  payload: message
+});

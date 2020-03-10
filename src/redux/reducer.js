@@ -4,7 +4,8 @@ const INITIAL_STATE = {
   email: "",
   password: "",
   name: "",
-  age: ""
+  age: "",
+  errorMessage: ""
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -29,6 +30,12 @@ const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         age: action.payload
       };
+    case ActionTypes.SET_ERROR_MESSAGE:
+      return {
+        ...state,
+        errorMessage: action.payload
+      };
+
     default:
       return state;
   }
