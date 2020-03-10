@@ -1,0 +1,21 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 62.5%; // 1rem = 10px;
+}
+
+.background {
+  height: 100vh;
+  background: linear-gradient(
+      rgba(255, 255, 255, 0.5),
+      rgba(255, 255, 255, 0.3)
+    ),
+    url(../../assets/background.jpg) no-repeat center;
+  background-size: cover;
+}
