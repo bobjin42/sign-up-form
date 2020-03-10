@@ -8,7 +8,7 @@ import ConfirmationPage from "../pages/ConfirmationPage";
 function App() {
   return (
     <Router>
-      <div className="background">
+      <div className="background center">
         <Switch>
           <Route path="/" exact render={() => <HomePage />} />
           <Route path="/home" exact render={() => <HomePage />} />
