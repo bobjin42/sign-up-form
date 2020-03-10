@@ -24,3 +24,12 @@ export const setErrorMessage = message => ({
   type: ActionTypes.SET_ERROR_MESSAGE,
   payload: message
 });
+
+export const setCurrentUser = name => ({
+  type: ActionTypes.SET_CURRENT_USER,
+  payload: name
+});
+
+export const clearForm = () => ({
+  type: ActionTypes.CLEAR_FORM
+});

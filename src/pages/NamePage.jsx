@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { setName, setAge, setErrorMessage } from "../redux/actions";
+import {
+  setName,
+  setAge,
+  setErrorMessage,
+  clearForm,
+  setCurrentUser
+} from "../redux/actions";
 import { withRouter } from "react-router-dom";
 
 function NamePage(props) {
@@ -46,13 +52,18 @@ function NamePage(props) {
     })
       .then(r => r.json())
       .then(data => {
+        //In real world, we will get a JWT token and automatically have the user signed in, clear the form input fields, and redirect to the confirmation page
+        dispatch(setCurrentUser(nameValue));
+        dispatch(clearForm());
         props.history.push("/confirmation");
       })
       .catch(err => {
-        //In real world we should dispatch an error message
-        // dispatch(setErrorMessage("Sign Up Failed"));
+        //In real world, the error message should be aligned with the backend response message
+        dispatch(setErrorMessage("Sign Up Failed"));
 
-        //In real world we should put this in the .then block
+        //In real world we should only put the code below in the .then block
+        dispatch(setCurrentUser(nameValue));
+        dispatch(clearForm());
         props.history.push("/confirmation");
       });
   };

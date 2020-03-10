@@ -5,7 +5,8 @@ const INITIAL_STATE = {
   password: "",
   name: "",
   age: "",
-  errorMessage: ""
+  errorMessage: "",
+  currentUser: ""
 };
 
 const reducer = (state = INITIAL_STATE, action) => {
@@ -35,7 +36,19 @@ const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         errorMessage: action.payload
       };
-
+    case ActionTypes.SET_CURRENT_USER:
+      return {
+        ...state,
+        currentUser: action.payload
+      };
+    case ActionTypes.CLEAR_FORM:
+      return {
+        ...state,
+        email: "",
+        password: "",
+        name: "",
+        age: ""
+      };
     default:
       return state;
   }
