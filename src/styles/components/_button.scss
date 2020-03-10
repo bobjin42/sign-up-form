@@ -1,0 +1,21 @@
+.button {
+  width: 22rem;
+  height: 8rem;
+  border-radius: 2rem;
+  font-size: 3rem;
+  background-color: var(--color-light-grey);
+  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
+  border: none;
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.5s;
+
+  &:hover {
+    background-color: var(--color-dark-grey);
+    color: var(--color-white);
+  }
+
+  &:active {
+    transform: translateY(1rem);
+  }
+}
