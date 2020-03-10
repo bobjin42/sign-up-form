@@ -1,18 +1,32 @@
-import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import EmailPage from "../pages/EmailPage";
 import NamePage from "../pages/NamePage";
 import ConfirmationPage from "../pages/ConfirmationPage";
 
 function App() {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+
   return (
     <Router>
       <div className="background center">
         <Switch>
           <Route path="/" exact render={() => <HomePage />} />
           <Route path="/home" exact render={() => <HomePage />} />
-          <Route path="/email" exact render={() => <EmailPage />} />
+          <Route
+            path="/email"
+            exact
+            render={() => (
+              <EmailPage
+                email={email}
+                password={password}
+                setEmail={setEmail}
+                setPassword={setPassword}
+              />
+            )}
+          />
           <Route path="/name" exact render={() => <NamePage />} />
           <Route
             path="/confirmation"
