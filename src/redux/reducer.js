@@ -19,6 +19,16 @@ const reducer = (state = INITIAL_STATE, action) => {
         ...state,
         password: action.payload
       };
+    case ActionTypes.SET_NAME:
+      return {
+        ...state,
+        name: action.payload
+      };
+    case ActionTypes.SET_AGE:
+      return {
+        ...state,
+        age: action.payload
+      };
     default:
       return state;
   }

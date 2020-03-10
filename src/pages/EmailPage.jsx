@@ -28,7 +28,6 @@ function EmailPage(props) {
   };
 
   const handleSubmit = e => {
-    console.log("hello");
     e.preventDefault();
     dispatch(setEmail(emailValue));
     dispatch(setPassword(passwordValue));

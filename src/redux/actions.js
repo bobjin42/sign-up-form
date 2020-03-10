@@ -9,3 +9,13 @@ export const setPassword = password => ({
   type: ActionTypes.SET_PASSWORD,
   payload: password
 });
+
+export const setName = name => ({
+  type: ActionTypes.SET_NAME,
+  payload: name
+});
+
+export const setAge = age => ({
+  type: ActionTypes.SET_AGE,
+  payload: age
+});
