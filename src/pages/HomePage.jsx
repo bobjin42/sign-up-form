@@ -5,7 +5,7 @@ export default function HomePage() {
   return (
     <div className="container">
       <Link to="/email">
-        <button className="button">Sign Up</button>
+        <button className="button button-large">Sign Up</button>
       </Link>
     </div>
   );

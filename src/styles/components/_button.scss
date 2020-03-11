@@ -1,14 +1,22 @@
 .button {
-  width: 22rem;
-  height: 8rem;
-  border-radius: 2rem;
-  font-size: 3rem;
-  background-color: var(--color-light-grey);
-  box-shadow: 0 2rem 6rem rgba(0, 0, 0, 0.3);
-  border: none;
+  border-radius: 0.5rem;
+  background-color: var(--color-white);
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.5s;
+
+  &-small {
+    width: 20rem;
+    height: 3rem;
+    box-shadow: 0 0.1rem 0.3rem rgba(0, 0, 0, 0.6);
+  }
+
+  &-large {
+    width: 20rem;
+    height: 6rem;
+    font-size: 3rem;
+    box-shadow: 0 1rem 4rem rgba(0, 0, 0, 0.6);
+  }
 
   &:hover {
     background-color: var(--color-dark-grey);

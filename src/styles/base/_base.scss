@@ -16,15 +16,12 @@ html {
   font-size: 62.5%; // 1rem = 10px;
 }
 
-body {
-  font-family: "Oswald", sans-serif;
-}
-
 .background {
   height: 100vh;
   background: linear-gradient(
+      to bottom,
       rgba(255, 255, 255, 0.5),
-      rgba(255, 255, 255, 0.3)
+      rgba(255, 255, 255, 0.8)
     ),
     url(../../assets/background.jpg) no-repeat center;
   background-size: cover;
@@ -34,10 +31,10 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 50vh;
-  width: 50vw;
-  top: 50%;
+  height: 100vh;
+  width: 100vw;
   left: 50%;
+  top: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
 }

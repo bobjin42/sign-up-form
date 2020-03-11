@@ -37,30 +37,34 @@ function EmailPage(props) {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="sign-up-email">
-          Email
-          <input
-            id="sign-up-email"
-            type="email"
-            name="email"
-            value={emailValue}
-            onChange={handleEmailChange}
-          />
-        </label>
-        <label htmlFor="sign-up-password">
-          Password
-          <input
-            id="sign-up-password"
-            type={showPassword ? "text" : "password"}
-            name="password"
-            value={passwordValue}
-            onChange={handlePasswordChange}
-          />
-        </label>
-        <button onClick={handleShowPassword}>
-          {showPassword ? "Hide Password" : "Show Password"}
-        </button>
-        <button>Next</button>
+        <div className="form-input-wrapper">
+          <div className="form-input">
+            <label htmlFor="sign-up-email">Email</label>
+            <input
+              id="sign-up-email"
+              type="email"
+              name="email"
+              value={emailValue}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div className="form-input">
+            <label htmlFor="sign-up-password">Password</label>
+            <input
+              id="sign-up-password"
+              type={showPassword ? "text" : "password"}
+              name="password"
+              value={passwordValue}
+              onChange={handlePasswordChange}
+            />
+          </div>
+        </div>
+        <div className="form-button-wrapper">
+          <button className="button button-small" onClick={handleShowPassword}>
+            {showPassword ? "Hide Password" : "Show Password"}
+          </button>
+          <button className="button button-small">Next</button>
+        </div>
       </form>
     </div>
   );
