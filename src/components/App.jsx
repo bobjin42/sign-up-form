@@ -1,5 +1,5 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter, Switch, Route } from "react-router-dom";
 import HomePage from "../pages/HomePage";
 import EmailPage from "../pages/EmailPage";
 import NamePage from "../pages/NamePage";
@@ -7,7 +7,7 @@ import ConfirmationPage from "../pages/ConfirmationPage";
 
 function App() {
   return (
-    <Router>
+    <HashRouter basename="/">
       <div className="background center">
         <Switch>
           <Route path="/" exact render={() => <HomePage />} />
@@ -21,7 +21,7 @@ function App() {
           />
         </Switch>
       </div>
-    </Router>
+    </HashRouter>
   );
 }
 
