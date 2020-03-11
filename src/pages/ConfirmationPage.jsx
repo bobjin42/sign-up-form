@@ -7,7 +7,7 @@ export default function ConfirmationPage() {
 
   return (
     <div className="container">
-      Thank you {currentUserFromStore} for signing up!
+      <h1>Thank you {currentUserFromStore} for signing up!</h1>
     </div>
   );
 }

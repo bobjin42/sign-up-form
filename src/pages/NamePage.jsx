@@ -78,29 +78,35 @@ function NamePage(props) {
   return (
     <div className="container">
       <form className="form" onSubmit={handleSubmit}>
-        <label htmlFor="sign-up-name">
-          Name
-          <input
-            id="sign-up-name"
-            type="text"
-            name="name"
-            value={nameValue}
-            onChange={handleNameChange}
-          />
-        </label>
-        <label htmlFor="sign-up-age">
-          Age
-          <input
-            id="sign-up-age"
-            type="number"
-            name="age"
-            min="0"
-            value={ageValue}
-            onChange={handleAgeChange}
-          />
-        </label>
-        <button onClick={handleBack}>Back</button>
-        <button>Submit</button>
+        <div className="form-input-wrapper">
+          <div className="form-input">
+            <label htmlFor="sign-up-name">Name</label>
+            <input
+              id="sign-up-name"
+              type="text"
+              name="name"
+              value={nameValue}
+              onChange={handleNameChange}
+            />
+          </div>
+          <div className="form-input">
+            <label htmlFor="sign-up-age">Age</label>
+            <input
+              id="sign-up-age"
+              type="number"
+              name="age"
+              min="0"
+              value={ageValue}
+              onChange={handleAgeChange}
+            />
+          </div>
+        </div>
+        <div className="form-button-wrapper">
+          <button className="button button-small" onClick={handleBack}>
+            Back
+          </button>
+          <button className="button button-small">Submit</button>
+        </div>
       </form>
     </div>
   );

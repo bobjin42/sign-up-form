@@ -4,6 +4,9 @@
   cursor: pointer;
   text-transform: uppercase;
   transition: all 0.5s;
+  color: var(--color-dark-grey);
+  margin: 0.8rem 1rem;
+  font-weight: 700;
 
   &-small {
     width: 20rem;

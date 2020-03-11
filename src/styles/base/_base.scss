@@ -14,6 +14,10 @@
 
 html {
   font-size: 62.5%; // 1rem = 10px;
+
+  @media (min-width: 620px) {
+    font-size: 100%;
+  }
 }
 
 .background {
@@ -23,8 +27,16 @@ html {
       rgba(255, 255, 255, 0.5),
       rgba(255, 255, 255, 0.8)
     ),
-    url(../../assets/background.jpg) no-repeat center;
-  background-size: cover;
+    url(../../assets/background_small.jpg) no-repeat center / cover;
+
+  @media (min-width: 620px) {
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0.5),
+        rgba(255, 255, 255, 0.8)
+      ),
+      url(../../assets/background_large.jpg) no-repeat center / cover;
+  }
 }
 
 .container {
