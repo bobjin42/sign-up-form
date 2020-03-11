@@ -35,7 +35,7 @@ function EmailPage(props) {
   };
 
   return (
-    <div className="container">
+    <section className="container">
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-input-wrapper">
           <div className="form-input">
@@ -66,7 +66,7 @@ function EmailPage(props) {
           <button className="button button-small">Next</button>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
 

@@ -68,15 +68,37 @@ function NamePage(props) {
       });
   };
 
+  const checkValidation = () => {
+    let hasError = false;
+    if (!emailFromStore.trim()) {
+      hasError = true;
+      window.alert("Email can not be blank");
+    }
+    if (!passwordFromStore.trim()) {
+      hasError = true;
+      window.alert("Password can not be blank");
+    }
+    if (!nameFromStore.trim()) {
+      hasError = true;
+      window.alert("Name can not be blank");
+    }
+    if (!ageFromStore.trim()) {
+      hasError = true;
+      window.alert("Age can not be blank");
+    }
+    return hasError;
+  };
+
   const handleSubmit = e => {
     e.preventDefault();
     dispatch(setName(nameValue));
     dispatch(setAge(ageValue));
+    if (checkValidation()) return;
     signUpCall();
   };
 
   return (
-    <div className="container">
+    <section className="container">
       <form className="form" onSubmit={handleSubmit}>
         <div className="form-input-wrapper">
           <div className="form-input">
@@ -108,7 +130,7 @@ function NamePage(props) {
           <button className="button button-small">Submit</button>
         </div>
       </form>
-    </div>
+    </section>
   );
 }
 

@@ -6,8 +6,8 @@ export default function ConfirmationPage() {
   const currentUserFromStore = useSelector(state => state.currentUser);
 
   return (
-    <div className="container">
+    <section className="container">
       <h1>Thank you {currentUserFromStore} for signing up!</h1>
-    </div>
+    </section>
   );
 }
